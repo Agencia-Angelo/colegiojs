@@ -259,7 +259,11 @@
     display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
   }
   .about-grid .img-placeholder{aspect-ratio:4/5;}
-  .about-stats{display:flex; gap:36px; margin-top:32px;}
+  .about-stats{display:flex; gap:36px; margin-top:32px; flex-wrap:wrap; row-gap:22px;}
+  @media (max-width:480px){
+    .about-stats{gap:28px;}
+    .stat b{font-size:28px;}
+  }
   .stat b{font-family:'Fraunces', serif; font-size:34px; display:block; color:var(--red);}
   .stat span{font-family:'IBM Plex Mono', monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft);}
   @media (max-width:900px){ .about-grid{grid-template-columns:1fr; gap:36px;} }
@@ -411,8 +415,12 @@
     padding:14px 16px; border-radius:10px; font-size:14px; margin-top:18px;
   }
   .success-msg.show{display:flex;}
-  @media (max-width:900px){ .ficha-wrap{grid-template-columns:1fr;} .card-ficha{transform:none;} }
-  @media (max-width:520px){ .field-row{grid-template-columns:1fr;} .card-ficha{padding:34px 22px 26px;} }
+  @media (max-width:900px){ .ficha-wrap{grid-template-columns:1fr; row-gap:64px;} .card-ficha{transform:none; margin-top:28px;} }
+  @media (max-width:520px){
+    .field-row{grid-template-columns:1fr;}
+    .card-ficha{padding:34px 22px 26px;}
+    .stamp{width:92px; height:92px; top:-46px; right:6px; font-size:9px;}
+  }
 
   /* ---------- location / footer ---------- */
   .loc-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
